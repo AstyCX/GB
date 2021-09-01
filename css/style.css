@@ -1,0 +1,1870 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Lato;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    min-height: 75px;
+    background-color: #222222;
+    padding-top: 18px;
+    box-sizing: border-box;
+}
+
+/* Первый блок шапки */
+
+.header__block-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 111px;
+    width: 100%;
+    height: 38px;
+}
+
+/* Логотип и наведение на логотип */
+
+.header__main-link {
+    display: block;
+    max-width: 44px;
+    width: 100%;
+    height: 38px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header__main-link:hover img {
+    filter: brightness(30%);
+}
+
+.header__main-link:active img {
+    filter: brightness(10%);
+}
+
+/* Поиск и анимация поиска */
+
+.header__form {
+    max-width: 26px;
+    width: 100%;
+    min-height: 26px;
+    position: relative;
+    fill: white;
+}
+
+.header__form:hover svg {
+    fill: orange;
+}
+
+.header__search-input {
+    width: 0;
+    min-height: 0;
+    padding: 5px;
+    outline: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -1px;
+    left: 30px;
+    color: #fff;
+    font-size: 16px;
+    font-family: Arial;
+    text-transform: capitalize;
+}
+
+.header__search-input:focus {
+    max-width: 150px;
+    width: 100%;
+    min-height: 20px;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
+.header__search-input:focus ~ label > svg {
+    fill: green;
+}
+
+.header__search-input:active ~ label > svg {
+    fill: red;
+}
+
+/* Второй блок шапки */
+
+.header__block-2 {
+    max-width: 168px;
+    width: 100%;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.header__block-2 button {
+    background: none;
+    border: none;
+}
+
+/* Выпадающее меню */
+
+.menu {
+    display: flex;
+}
+
+.menu-btn {
+    width: 32px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    max-width: 32px;
+    height: 2.8px;
+    background-color: #fff;
+    position: relative;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+    content: "";
+    display: block;
+    max-width: 32px;
+    width: 100%;
+    height: 2.8px;
+    position: absolute;
+    background-color: #fff;
+    top: -10px;
+    left: 0;
+}
+
+.menu-btn span::before {
+    top: 10px;
+}
+
+.menu-btn:hover span,
+.menu-btn:hover span::before,
+.menu-btn:hover span::after {
+    background-color: orange;
+}
+
+.menu-btn:active span,
+.menu-btn:active span::before,
+.menu-btn:active span::after {
+    background-color: red;
+}
+
+.menu-input {
+    display: none;
+}
+
+.menu-input[type="checkbox"]:checked ~ .menu-list {
+    display: block;
+}
+
+.menu-list-close-btn {
+    display: block;
+    max-width: 12px;
+    width: 100%;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    left: 170px;
+}
+
+.menu-list-close-btn::before,
+.menu-list-close-btn::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #6f6e6e;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left: -3px;
+    transform: rotate(45deg);
+}
+
+.menu-list-close-btn::after {
+    transform: rotate(-45deg);
+}
+
+.menu-list-close-btn:hover::before,
+.menu-list-close-btn:hover::after {
+    background: #b7b6b6;
+}
+
+.menu-list-close-btn:active::before,
+.menu-list-close-btn:active::after {
+    background: #535353;
+}
+
+.menu-list-title {
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    font-weight: bold;
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.menu-list {
+    max-width: 232px;
+    width: 100%;
+    min-height: 764px;
+    padding: 16px 33px;
+    box-sizing: border-box;
+    background-color: #fff;
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 22;
+}
+
+.menu-sublist {
+    list-style-type: none;
+    padding: 12px 0 21.5px 20px;
+}
+
+.menu-list-item > a,
+.menu-sublist-item > a {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: normal;
+}
+
+.menu-list-item > a {
+    color: #f16d7f;
+    text-transform: uppercase;
+}
+
+.menu-sublist-item {
+    margin-bottom: 11px;
+}
+
+.menu-sublist-item:last-child {
+    margin-bottom: 0;
+}
+
+.menu-sublist-item > a {
+    color: #6f6e6e;
+}
+
+.menu-list-item:hover > a {
+    color: #9889d7;
+}
+
+.menu-list-item:active > a {
+    color: #9d2334;
+}
+
+.menu-sublist-item > a:hover {
+    text-decoration: underline;
+}
+
+/* Профиль и наведение на профиль */
+
+.header__profile-btn {
+    max-width: 29px;
+    width: 100%;
+    height: 29px;
+    fill: white;
+}
+
+.header__profile-btn:hover {
+    fill: orange;
+}
+
+.header__profile-btn:active {
+    fill: red;
+}
+
+/* Корзина и наведение на корзину */
+
+.cart-text {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: normal;
+    color: #ffffff;
+    position: absolute;
+    right: 15.77%;
+    top: 7.5%;
+}
+
+.header__cart-btn {
+    position: relative;
+    max-width: 42px;
+    width: 100%;
+    height: 37px;
+    fill: white;
+}
+
+.header__cart-btn:hover {
+    fill: orange;
+}
+
+.header__cart-btn:active {
+    fill: red;
+}
+
+/* Первый блок основного контента */
+
+.main__top-content {
+    min-height: 764px;
+    background-color: #f1e4e6;
+}
+
+.main__top-content .container {
+    background-image: url(../img/header__man.png);
+    background-repeat: no-repeat;
+    padding: 290px 331px 381px 892px;
+    box-sizing: border-box;
+}
+
+.main__top-content:hover {
+    filter: brightness(50%);
+}
+
+/* Текст */
+
+.main__top-cont {
+    max-width: 377px;
+    max-height: 93px;
+    position: relative;
+}
+
+.main__top-text {
+    display: block;
+    width: 100%;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 57.6px;
+    color: #222222;
+}
+
+.main__top-text-2 {
+    display: block;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
+}
+
+.main__top-text-3 {
+    color: #f16d7f;
+}
+
+.main__top-cont::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 92px;
+    background-color: #f16d7f;
+    position: absolute;
+    top: 0;
+    left: -28px;
+}
+
+/* Второй блок основного контента */
+
+.main__new-offers {
+    margin: 65px auto 0 auto;
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Карточки предложений */
+
+.offer__card {
+    max-width: 360px;
+    max-height: 260px;
+    position: relative;
+}
+
+.offer__card-4 {
+    margin-top: 30px;
+    position: relative;
+}
+
+/* Текст карточек */
+
+.offer__text {
+    font-size: 16px;
+    line-height: 19.2px;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+}
+
+.offer__text-color {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 28.8px;
+    color: #f16d7f;
+    display: block;
+}
+
+.offer__text-block-1 {
+    max-width: 154px;
+    max-height: 50px;
+    position: absolute;
+    top: 105px;
+    left: 103px;
+}
+
+.offer__text-block-2 {
+    max-width: 110px;
+    max-height: 50px;
+    position: absolute;
+    top: 105px;
+    left: 125px;
+}
+
+.offer__text-block-3 {
+    max-width: 160px;
+    max-height: 50px;
+    position: absolute;
+    top: 105px;
+    left: 123px;
+}
+
+.offer__text-block-4 {
+    max-width: 160px;
+    max-height: 50px;
+    position: absolute;
+    top: 65px;
+    left: 491px;
+}
+
+/* Третий блок основного контента */
+
+.main__cards {
+    max-width: 1140px;
+    margin: 96px auto 95.5px auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cards {
+    margin-top: 48px;
+}
+
+.main__card-4,
+.main__card-5,
+.main__card-6 {
+    margin-bottom: 0;
+}
+
+.main__card {
+    max-width: 360px;
+    min-height: 581px;
+    background: #f8f8f8;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+/* Наведение на карточки и кнопка добавления в корзину */
+
+.main__card button {
+    background: none;
+    border: none;
+}
+
+.card__btn svg {
+    fill: white;
+}
+
+.card__btn {
+    border: 1px solid #ffffff;
+    position: absolute;
+    top: 188px;
+    left: 111px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #ffffff;
+    font-weight: normal;
+    width: 139px;
+    min-height: 44px;
+    display: none;
+}
+
+.main__card:hover .card__btn {
+    display: flex;
+    border: 1px solid #ffffff;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main__card:hover img {
+    filter: brightness(50%);
+}
+
+.main__card:hover .card__btn:hover {
+    border: 1px solid black;
+    background: lightgray;
+    color: black;
+}
+
+.main__card:hover .card__btn:hover svg {
+    fill: black;
+}
+
+.main__card:hover .card__btn:active {
+    border: 1px solid white;
+    background: none;
+    color: white;
+}
+
+.main__card:hover .card__btn:active svg {
+    fill: white;
+}
+
+/* Текст карточек */
+
+.main__cards-title {
+    font-size: 30px;
+    line-height: 36px;
+    color: #222222;
+    font-weight: normal;
+    text-align: center;
+}
+
+.main__cards-subtitle {
+    font-size: 14px;
+    line-height: 17px;
+    color: #9f9f9f;
+    font-weight: 400;
+    text-align: center;
+}
+
+.card__title {
+    font-size: 13px;
+    line-height: 16px;
+    color: #000000;
+    font-weight: normal;
+    text-align: left;
+    margin-top: 25px;
+    margin-left: 18px;
+}
+
+.card__text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #5d5d5d;
+    font-weight: 300;
+    text-align: left;
+    margin-top: 13px;
+    margin-left: 16.46px;
+    max-width: 315px;
+}
+
+.card__price {
+    font-size: 16px;
+    line-height: 19px;
+    color: #f16d7f;
+    font-weight: normal;
+    margin-top: 18px;
+    margin-left: 18px;
+    display: block;
+}
+
+/* Кнопка и наведение на кнопку */
+
+.main__cards-btn {
+    text-align: center;
+    padding: 14.5px 38.5px;
+    border: 1px solid #ff6a6a;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f26376;
+    margin: 48.5px auto 0 auto;
+    display: block;
+    max-width: 211px;
+}
+
+.main__cards-btn:hover {
+    border: 1px solid #ff6a6a;
+    background: #f16d7f;
+    color: white;
+}
+
+/* Четвёртый блок основого контента */
+
+.main__feature {
+    display: flex;
+    align-items: center;
+    margin-top: 95.5px;
+    background-color: #222224;
+    min-height: 341px;
+}
+
+.main__feature-cards {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__feature-card {
+    max-width: 360px;
+}
+
+/* Текст */
+
+.feature__title {
+    font-size: 19.96px;
+    line-height: 24px;
+    color: #fbfbfb;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.feature__text {
+    font-size: 13.972px;
+    line-height: 17px;
+    text-align: center;
+    color: #fbfbfb;
+    font-weight: 300;
+}
+
+/* Изображения */
+
+.main__feature-card svg {
+    fill: #f16d7f;
+    display: block;
+    margin: 0 auto;
+}
+
+.main__feature-delivery svg {
+    margin-bottom: 28.7px;
+}
+
+.main__feature-sales svg {
+    margin-bottom: 19.7px;
+}
+
+.main__feature-quality svg {
+    margin-bottom: 25.7px;
+}
+
+/* Пятый блок основного контента */
+
+.main__subscribe {
+    min-height: 448px;
+    background-image: url(../img/photo__subscribe.png);
+    background-size: cover;
+    padding-top: 97px;
+    box-sizing: border-box;
+}
+
+.main__subscribe .container {
+    display: flex;
+}
+
+/* Блок информации */
+
+.subscribe__info {
+    max-width: 360px;
+    min-height: 225px;
+    margin-right: 223.26px;
+}
+
+.subscribe__photo {
+    display: block;
+    max-width: 96px;
+    margin: 0 auto 30px auto;
+}
+
+.subscribe__text {
+    display: block;
+    font-size: 20px;
+    line-height: 24px;
+    color: #222224;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Блок формы */
+
+.subscribe__email {
+    align-self: center;
+    min-width: 557px;
+    min-height: 142px;
+}
+
+/* Текст */
+
+.subscribe__title {
+    font-size: 24px;
+    line-height: 167.2%;
+    text-align: center;
+    color: #222224;
+    font-weight: bold;
+    display: block;
+}
+
+.subscribe__subtitle {
+    display: block;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #222224;
+    font-weight: 400px;
+    margin-bottom: 32px;
+}
+
+/* Форма */
+
+.subscribe__input {
+    padding: 20px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background: #e1e1e1;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    color: #222224;
+    opacity: 0.67;
+    font-weight: normal;
+    min-width: 256px;
+}
+
+.subscribe__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Кнопка отправки и наведение на кнопку отправки */
+
+.subscribe__btn {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 17px;
+    display: block;
+    text-align: center;
+    font-weight: normal;
+    color: #ffffff;
+    background: #e05c6e;
+    min-width: 100px;
+}
+
+.subscribe__btn:hover {
+    border: 1px solid #e05c6e;
+    background: white;
+    color: #e05c6e;
+    padding: 19px;
+}
+
+/* Футер */
+
+.footer {
+    min-height: 79px;
+    background: #222224;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+}
+
+.footer__copy {
+    align-self: center;
+    font-size: 16px;
+    line-height: 19px;
+    color: #fbfbfb;
+    font-weight: normal;
+    display: block;
+    max-width: 332px;
+}
+
+.footer__links {
+    min-height: 32px;
+    text-decoration: none;
+}
+
+.footer__links a svg {
+    fill: white;
+}
+
+.footer__links a:hover svg {
+    fill: #e05c6e;
+}
+
+.footer__links:nth-child(-n + 3) {
+    margin-right: 7.29px;
+}
+
+/* Страница Каталог */
+
+/* Первый блок основого контента */
+
+.main__new-arrivals {
+    background: #f8f3f4;
+    min-height: 148px;
+    display: flex;
+    align-items: center;
+}
+
+.main__new-arrivals .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+}
+
+.new-arrivals__text-block {
+    align-self: center;
+}
+
+.breadcrumb {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+/* Текст */
+
+.new-arrivals__left-text {
+    display: block;
+    font-size: 24px;
+    line-height: 29px;
+    color: #f16d7f;
+    font-weight: normal;
+}
+
+.breadcrumb a {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 300px;
+    color: #636363;
+    text-decoration: none;
+}
+
+.breadcrumb li:not([a]) {
+    color: #f16d7f;
+    font-weight: 700px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.breadcrumb li + li::before {
+    content: " / ";
+    margin: 0 5.5px;
+    color: #636363;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    font-weight: 400px;
+    color: lightslategrey;
+}
+
+/* Второй блок основого контента */
+
+.main__filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+    min-height: 118px;
+    padding-left: 16px;
+}
+
+.main__filter .container {
+    display: flex;
+    justify-content: start;
+    max-width: 1140px;
+}
+
+.main__filter-text {
+    min-width: 670px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter__left-block {
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__right-block {
+    width: 296.02px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter__left-block svg {
+    align-self: center;
+}
+
+.list-form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-form-1 {
+    width: 132px;
+    flex-direction: row;
+}
+
+.list-form-2 {
+    width: 49px;
+}
+
+.list-form-3 {
+    width: 59px;
+    flex-direction: row;
+}
+
+/* Текст */
+
+.filter__left-text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.filter__right-text {
+    font-size: 14px;
+    line-height: 17px;
+    color: #6f6e6e;
+    font-weight: normal;
+}
+
+/* Выпадающие списки */
+
+input:focus,
+button:focus {
+    outline: none;
+}
+
+input:focus-visible,
+button:focus-visible {
+    outline: 2px solid #f16d7f;
+}
+
+#switch-filter {
+    display: none;
+}
+
+#switch-filter:checked ~ .filter-list {
+    display: block;
+}
+
+.filter-btn {
+    display: flex;
+    width: 100%;
+    height: 17px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    text-align: left;
+}
+
+.filter-btn span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.8px;
+    text-transform: uppercase;
+}
+
+.filter-btn svg {
+    margin: 0 0 0 11px;
+    fill: currentColor;
+}
+
+.filter-btn:hover {
+    color: #f16d7f;
+}
+
+.filter-btn:active {
+    color: #222224;
+}
+
+.filter-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-list-item {
+    width: 100%;
+    margin: 0 0 18px 0;
+    padding: 11px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16.8px;
+    border-bottom: 1px solid #ebebeb;
+    position: relative;
+}
+
+.filter-list-item:before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 37px;
+    background-color: #ef5b70;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+
+.filter-list-item a {
+    text-transform: uppercase;
+    color: #ef5b70;
+    text-decoration: none;
+}
+
+.filter-list-item:hover:before {
+    background-color: red;
+}
+
+.filter-list-item:hover a {
+    color: red;
+}
+
+.filter-list-item:active:before {
+    background-color: #ccc;
+}
+
+.filter-list-item:active a {
+    color: #ccc;
+}
+
+.filter-sublist {
+    margin: 24px 0 0 0;
+    padding: 0 0 0 7px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.filter-sublist-item {
+    margin: 0 0 11px 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16.8px;
+}
+
+.filter-sublist-item:last-child {
+    margin: 0 0 24px 0;
+}
+
+.filter-sublist-item a {
+    color: #6f6e6e;
+    text-decoration: none;
+}
+
+.filter-sublist-item:hover a {
+    color: #ef5b70;
+}
+
+.filter-sublist-item:active a {
+    color: #000;
+}
+
+/* Список Size */
+
+.list-size {
+    width: 80px;
+    border: none;
+    background-color: transparent;
+}
+
+.list-size-btn-title {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16.8px;
+    color: #6f6e6e;
+    background-color: transparent;
+    text-align: left;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.list-size-btn-title svg {
+    fill: #6f6e6e;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+}
+
+.list-size-btn-title:hover {
+    color: #f16d7f;
+}
+
+.list-size-btn-title:hover svg {
+    fill: currentColor;
+}
+
+.list-size-btn-title:active {
+    color: black;
+}
+
+.list-size-btn-title:active svg {
+    fill: currentColor;
+}
+
+#switch {
+    display: none;
+}
+
+#switch:checked ~ .list-size-wrp {
+    display: flex;
+}
+
+.list-size-wrp {
+    display: none;
+    flex-direction: column;
+    margin: 5px 0 0 0;
+    padding: 9.5px 9.5px 9.5px 31px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.list-size-item {
+    display: none;
+}
+
+.list-size-item:nth-child(1):checked ~ .list-size-item-title:nth-child(2):before,
+.list-size-item:nth-child(3):checked ~ .list-size-item-title:nth-child(4):before,
+.list-size-item:nth-child(5):checked ~ .list-size-item-title:nth-child(6):before,
+.list-size-item:nth-child(7):checked ~ .list-size-item-title:nth-child(8):before {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Green_tick.svg/600px-Green_tick.svg.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.list-size-item-title {
+    display: block;
+    margin: 0 0 6px 0;
+    position: relative;
+    text-transform: uppercase;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16.41px;
+    color: #6f6e6e;
+}
+
+.list-size-item-title:before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ebebeb;
+    position: absolute;
+    top: 1px;
+    left: -23.5px;
+}
+
+/* Pagination */
+
+.main__cards-pagination {
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    width: 284px;
+    min-height: 44px;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    margin: 48px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main__cards-pagination-text {
+    display: flex;
+    justify-content: space-between;
+    width: 203px;
+}
+
+/* Текст */
+
+.main__cards-pagination-text a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    color: #ef5b70;
+}
+
+.main__cards-pagination-text a:hover {
+    color: #6f6e6e;
+    text-decoration: underline;
+}
+
+/* Страница Продукты */
+
+/* Второй блок основного контента */
+
+.main__carousel {
+    display: flex;
+    align-items: center;
+    min-height: 777px;
+    background-color: #f7f7f7;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../img/main__carousel-background.png);
+}
+
+.main__carousel .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1600px;
+}
+
+.right-arrow,
+.left-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-arrow svg {
+    transform: rotate(180deg);
+}
+
+.right-arrow {
+    width: 47px;
+    height: 47px;
+    background: rgba(42, 42, 42, 0.15);
+}
+
+.left-arrow {
+    width: 47px;
+    height: 47px;
+    background: rgba(42, 42, 42, 0.15);
+}
+
+.right-arrow:hover svg {
+    fill: #f16d7f;
+}
+
+.left-arrow:hover svg {
+    fill: #f16d7f;
+}
+
+/* Третий блок основного контента */
+
+.main__collection {
+    min-height: 600px;
+    width: 1140px;
+    border: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -65px;
+    margin: 0 auto;
+    background: #ffffff;
+}
+
+.main__collection .container {
+    max-width: 640px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main__collection svg {
+    align-self: center;
+}
+
+.main__collection hr {
+    border: 1px solid #eaeaea;
+    opacity: 0.7;
+}
+
+.main__collection-choose {
+    margin-top: 65.05px;
+    display: flex;
+    justify-content: space-between;
+    width: 373px;
+    align-self: center;
+    margin-bottom: 49px;
+}
+
+.main__collection-choose-list {
+    display: flex;
+}
+
+/* Текст */
+
+.main__collection-title {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #f16d7f;
+    text-align: center;
+    position: relative;
+    margin-bottom: 12.1px;
+}
+
+.main__collection-subtitle {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 300;
+    color: #4d4d4d;
+    text-align: center;
+    margin-top: 12.1px;
+    margin-bottom: 48.41px;
+}
+
+.main__collection-text {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    font-weight: 300;
+    color: #5e5e5e;
+    max-width: 555px;
+    align-self: center;
+    margin-bottom: 32.37px;
+}
+
+.main__collection-price {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 300;
+    color: #ef5b70;
+    align-self: center;
+    margin-bottom: 65.04px;
+}
+
+.main__collection-choose-list-text {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: normal;
+    color: #6f6e6e;
+    margin-right: 9px;
+}
+
+/* Кнопка и наведение на кнопку */
+.main__collection-btn {
+    padding: 14.62px 56.5px 8.57px 23.5px;
+    border: 1px solid #ff6a6a;
+    max-width: 212px;
+    display: block;
+    align-self: center;
+    text-decoration: none;
+}
+
+.main__collection-btn-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 131px;
+}
+
+.main__collection-btn-block svg {
+    fill: #f26376;
+}
+
+.main__collection-btn-block span {
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #f26376;
+}
+
+.main__collection-btn:hover {
+    border: 1px solid #ff6a6a;
+    background: #f16d7f;
+}
+
+.main__collection-btn:hover .main__collection-btn-block svg {
+    fill: white;
+}
+
+.main__collection-btn:hover .main__collection-btn-block span {
+    color: white;
+}
+
+/* Страница Корзина */
+
+/* Второй блок основного контента */
+
+.main__cart {
+    margin-top: 96px;
+    margin-bottom: 128px;
+}
+
+.main__cart .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__cart-items {
+    max-width: 652px;
+    min-height: 774px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__cart-items-card {
+    display: flex;
+    width: 652px;
+    min-height: 306px;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    margin-bottom: 40px;
+}
+
+.last-card {
+    margin-bottom: 72px;
+}
+
+.main__cart-items-card-info {
+    padding: 22px 0 62px 0;
+    max-width: 262px;
+    margin-left: 31px;
+    margin-right: 57px;
+}
+
+.main__cart-items-card-list {
+    list-style-type: none;
+}
+
+.main__cart-items-card-list-item {
+    margin-bottom: 6px;
+}
+
+.main__cart-items-card-list-item:last-child {
+    margin-bottom: 0;
+    max-width: 165.5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__cart-items-card svg {
+    padding-top: 28px;
+    padding-right: 22px;
+}
+
+.main__cart-items-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-value {
+    max-width: 44px;
+    border: 1px solid #EAEAEA;
+    text-align: center;
+    padding-left: 15px;
+}
+
+/* Текст */
+
+.main__cart-items-card-title {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: normal;
+    color: #222222;
+    margin-bottom: 42px;
+}
+
+.charact {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #575757;
+}
+
+.value {
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: normal;
+    color: #656565;
+}
+
+.price-value {
+    color: #f26376;
+}
+
+/* Кнопки и наведение на кнопки */
+
+.main__cart-items-btn {
+    padding: 16px 39px;
+    border: 1px solid #a4a4a4;
+    background-color: white;
+}
+
+.main__cart-items-btns span {
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.main__cart-items-btn:hover {
+    border: 1px solid #a4a4a4;
+    background-color: #a4a4a4;
+}
+
+.main__cart-items-btn:hover span {
+    color: white;
+}
+
+/* Оплата и Адрес */
+
+.main__cart-payment {
+    width: 360px;
+}
+
+.main__cart-payment-adress-input {
+    width: 360px;
+    height: 45px;
+    border: 1px solid #a4a4a4;
+    outline: thistle;
+    font-size: 13px;
+    line-height: 16px;
+    color: #b1b1b1;
+    font-weight: 300;
+    margin-bottom: 21px;
+    padding-left: 17.24px;
+    box-sizing: border-box;
+}
+
+.last-input {
+    margin-bottom: 23.5px;
+}
+
+.submit-input {
+    width: 101.5px;
+    height: 35px;
+    font-weight: 300;
+    line-height: 13px;
+    color: #4a4a4a;
+    font-size: 11px;
+    background-color: white;
+    outline: none;
+    border: 1px solid #a4a4a4;
+}
+
+/* Текст */
+
+.main__cart-payment-adress-title {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    color: #222222;
+    margin-bottom: 20.5px;
+}
+
+/* Второй блок оплаты */
+
+.main__cart-payment-proceed {
+    min-height: 214px;
+    max-width: 360px;
+    width: 100%;
+    margin-top: 57.5px;
+    padding: 39px 34px 42px 43px;
+    box-sizing: border-box;
+    background: #F5F3F3;
+    display: flex;
+    flex-direction: column;
+}
+
+.main__cart-payment-proceed-sub {
+    min-width: 108px;
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+}
+
+.main__cart-payment-proceed-grand {
+    min-width: 170px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 21px;
+    align-self: flex-end;
+}
+
+.main__cart-payment-proceed hr {
+    border: 1px solid #eaeaea;
+    opacity: 0.7;
+}
+
+/* Текст */
+
+.main__cart-payment-proceed-sub span {
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    color: #4A4A4A;
+    text-transform: uppercase;
+}
+
+.main__cart-payment-proceed-grand span:first-child {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    color: #222222;
+    text-transform: uppercase;
+}
+
+.main__cart-payment-proceed-grand span:last-child {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    color: #F16D7F;
+    text-transform: uppercase;
+}
+
+/* Кнопка и наведение на кнопку */
+
+.main__cart-payment-proceed-btn {
+    background: #F16D7F;
+    align-self: center;
+    border: none;
+    margin-top: 17px;
+    max-width: 273px;
+    width: 100%;
+    min-height: 50px;
+}
+
+.main__cart-payment-proceed-btn span {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: Lato;
+    text-align: center;
+}
+
+.main__cart-payment-proceed-btn:hover {
+    background-color: white;
+    border: 1px solid #F16D7F;
+}
+
+.main__cart-payment-proceed-btn:hover span {
+    color: #F16D7F;
+}
+
+
+
+/* Страница Регистрации */
+
+/* Второй блок основного контента */
+
+.main__registration {
+    margin: 64px 0 96px 0;
+}
+
+.main__registration .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main__registration-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 360px;
+    width: 100%;
+}
+
+.main__registration-form-name-input, .main__registration-form-login-input {
+    margin-bottom: 20px;
+    border: 1px solid #A4A4A4;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #B1B1B1;
+    padding-left: 17px;
+    max-width: 360px;
+    width: 100%;
+    min-height: 45px;
+}
+
+.main__registration-form-name-input:last-child {
+    margin-bottom: 31.5px;
+}
+
+.main__registration-form-login-input:last-child {
+    margin-bottom: 15px;
+}
+
+.radio-input {
+    margin: 0 10px 0 0;
+}
+
+.radio-label{
+    margin: 0 20px 0 0;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;
+    font-weight: 300;
+}
+
+.radio-btns {
+    margin: 0 0 33px 0;
+}
+
+/* Кнопка отправки и наведение на кнопку */
+
+#join-now {
+    display: none;
+}
+
+.main__registration-form-submit {
+    padding: 0 29px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 167px;
+    width: 100%;
+    min-height: 50px;
+    background: #F16D7F;
+}
+.main__registration-form-submit svg {
+    fill: white;
+}
+
+.main__registration-form-submit span {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.main__registration-form-submit:hover {
+    background: white;
+    border: 1px solid #F16D7F;
+}
+
+.main__registration-form-submit:hover span {
+    color: #F16D7F;
+}
+
+.main__registration-form-submit:hover svg {
+    fill: #F16D7F;
+} 
+
+
+/* Текст */
+
+.main__registration-form-name, .main__registration-form-login {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.main__registration-form-password-help {
+    font-size: 13px;
+    line-height: 16px;
+    color: #B1B1B1;
+    font-weight: 300;
+    margin-bottom: 39px;
+}
+
+/* Loyalty  */
+
+.main__registration-loyalty {
+    max-width: 652px;
+    width: 100%;
+}
+
+.main__registration-loyalty-list {
+    padding-left: 28px;
+    list-style-image: url(../img/Vector.svg);
+}
+
+.main__registration-loyalty-list-item {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    font-style: normal;
+    color: #000000;
+    padding-left: 23.08px;
+}
+
+/* Текст */
+
+.main__registration-loyalty-title {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 300;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0 0 22px 0;
+}
+
+.main__registration-loyalty-subtitle {
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0 0 21px 0;
+}
