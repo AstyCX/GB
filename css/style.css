@@ -1,3 +1,35 @@
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Bold.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Light.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-LightItalic.ttf);
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url(../fonts/Lato-Italic.ttf);
+    font-weight: normal;
+    font-style: italic;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -87,8 +119,7 @@ body {
 }
 
 .header__search-input:focus {
-    max-width: 150px;
-    width: 100%;
+    width: 150px;
     min-height: 20px;
     border: 2px solid white;
     border-radius: 2px;
@@ -341,7 +372,13 @@ body {
 .main__top-content .container {
     background-image: url(../img/header__man.png);
     background-repeat: no-repeat;
-    padding: 290px 331px 381px 892px;
+    background-position: left;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 764px;
+    padding-right: 32px;
     box-sizing: border-box;
 }
 
@@ -352,7 +389,7 @@ body {
 /* Текст */
 
 .main__top-cont {
-    max-width: 377px;
+    width: 377px;
     max-height: 93px;
     position: relative;
 }
@@ -408,8 +445,8 @@ body {
 }
 
 .offer__card-4 {
-    margin-top: 30px;
     position: relative;
+    margin-top: 30px;
 }
 
 /* Текст карточек */
@@ -466,17 +503,27 @@ body {
 
 /* Третий блок основного контента */
 
-.main__cards {
+.main__cards,
+.main__cards-catalog {
     max-width: 1140px;
     margin: 96px auto 95.5px auto;
     display: flex;
     flex-direction: column;
 }
 
-.cards {
+.main__cards-catalog {
+    margin-top: 0;
+}
+
+.cards,
+.cards-catalog {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.cards-catalog {
+    margin-top: 0;
 }
 
 .cards {
@@ -837,10 +884,6 @@ body {
     fill: #e05c6e;
 }
 
-.footer__links:nth-child(-n + 3) {
-    margin-right: 7.29px;
-}
-
 /* Страница Каталог */
 
 /* Первый блок основого контента */
@@ -910,7 +953,6 @@ body {
 .main__filter {
     display: flex;
     align-items: center;
-    margin-bottom: 14px;
     min-height: 118px;
     padding-left: 16px;
 }
@@ -928,7 +970,10 @@ body {
 }
 
 .filter__left-block {
-    width: 70px;
+    background: white;
+    max-width: 360px;
+    width: 360px;
+    position: relative;
     display: flex;
     flex-direction: column;
 }
@@ -958,6 +1003,7 @@ body {
 
 .list-form-2 {
     width: 49px;
+    position: relative;
 }
 
 .list-form-3 {
@@ -1034,10 +1080,18 @@ button:focus-visible {
 }
 
 .filter-list {
+    max-width: 360px;
+    width: 360px;
+    background: white;
+    top: 60px;
+    left: -8px;
+    position: absolute;
     display: none;
     list-style: none;
     margin: 0;
     padding: 0;
+    z-index: 250;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
 }
 
 .filter-list-item {
@@ -1175,6 +1229,10 @@ button:focus-visible {
 }
 
 .list-size-wrp {
+    z-index: 100;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    position: absolute;
+    top: 18px;
     display: none;
     flex-direction: column;
     margin: 5px 0 0 0;
@@ -1468,7 +1526,8 @@ button:focus-visible {
 
 .main__cart-items-card {
     display: flex;
-    width: 652px;
+    max-width: 652px;
+    width: 100%;
     min-height: 306px;
     box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
     margin-bottom: 40px;
@@ -1513,7 +1572,7 @@ button:focus-visible {
 
 .input-value {
     max-width: 44px;
-    border: 1px solid #EAEAEA;
+    border: 1px solid #eaeaea;
     text-align: center;
     padding-left: 15px;
 }
@@ -1626,7 +1685,7 @@ button:focus-visible {
     margin-top: 57.5px;
     padding: 39px 34px 42px 43px;
     box-sizing: border-box;
-    background: #F5F3F3;
+    background: #f5f3f3;
     display: flex;
     flex-direction: column;
 }
@@ -1658,7 +1717,7 @@ button:focus-visible {
     font-size: 11px;
     line-height: 13px;
     font-weight: normal;
-    color: #4A4A4A;
+    color: #4a4a4a;
     text-transform: uppercase;
 }
 
@@ -1674,14 +1733,14 @@ button:focus-visible {
     font-size: 16px;
     line-height: 19px;
     font-weight: 700;
-    color: #F16D7F;
+    color: #f16d7f;
     text-transform: uppercase;
 }
 
 /* Кнопка и наведение на кнопку */
 
 .main__cart-payment-proceed-btn {
-    background: #F16D7F;
+    background: #f16d7f;
     align-self: center;
     border: none;
     margin-top: 17px;
@@ -1694,7 +1753,7 @@ button:focus-visible {
     font-size: 16px;
     line-height: 19px;
     font-weight: 300;
-    color: #FFFFFF;
+    color: #ffffff;
     text-transform: uppercase;
     font-family: Lato;
     text-align: center;
@@ -1702,14 +1761,12 @@ button:focus-visible {
 
 .main__cart-payment-proceed-btn:hover {
     background-color: white;
-    border: 1px solid #F16D7F;
+    border: 1px solid #f16d7f;
 }
 
 .main__cart-payment-proceed-btn:hover span {
-    color: #F16D7F;
+    color: #f16d7f;
 }
-
-
 
 /* Страница Регистрации */
 
@@ -1732,13 +1789,15 @@ button:focus-visible {
     width: 100%;
 }
 
-.main__registration-form-name-input, .main__registration-form-login-input {
+.main__registration-form-name-input,
+.main__registration-form-login-input {
+    box-sizing: border-box;
     margin-bottom: 20px;
-    border: 1px solid #A4A4A4;
+    border: 1px solid #a4a4a4;
     font-size: 13px;
     line-height: 16px;
     font-weight: 300;
-    color: #B1B1B1;
+    color: #b1b1b1;
     padding-left: 17px;
     max-width: 360px;
     width: 100%;
@@ -1757,7 +1816,7 @@ button:focus-visible {
     margin: 0 10px 0 0;
 }
 
-.radio-label{
+.radio-label {
     margin: 0 20px 0 0;
     font-size: 11px;
     line-height: 13px;
@@ -1776,6 +1835,7 @@ button:focus-visible {
 }
 
 .main__registration-form-submit {
+    outline: none;
     padding: 0 29px;
     box-sizing: border-box;
     display: flex;
@@ -1784,7 +1844,8 @@ button:focus-visible {
     max-width: 167px;
     width: 100%;
     min-height: 50px;
-    background: #F16D7F;
+    background: #f16d7f;
+    border: none;
 }
 .main__registration-form-submit svg {
     fill: white;
@@ -1794,26 +1855,26 @@ button:focus-visible {
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .main__registration-form-submit:hover {
     background: white;
-    border: 1px solid #F16D7F;
+    border: 1px solid #f16d7f;
 }
 
 .main__registration-form-submit:hover span {
-    color: #F16D7F;
+    color: #f16d7f;
 }
 
 .main__registration-form-submit:hover svg {
-    fill: #F16D7F;
-} 
-
+    fill: #f16d7f;
+}
 
 /* Текст */
 
-.main__registration-form-name, .main__registration-form-login {
+.main__registration-form-name,
+.main__registration-form-login {
     font-size: 16px;
     line-height: 19px;
     font-weight: 300;
@@ -1824,7 +1885,7 @@ button:focus-visible {
 .main__registration-form-password-help {
     font-size: 13px;
     line-height: 16px;
-    color: #B1B1B1;
+    color: #b1b1b1;
     font-weight: 300;
     margin-bottom: 39px;
 }
@@ -1867,4 +1928,329 @@ button:focus-visible {
     font-weight: 300;
     color: #000000;
     margin: 0 0 21px 0;
+}
+
+/* Адаптив */
+
+/* Повторяющиеся блоки */
+
+@media (max-width: 1034px) {
+    .header {
+        padding: 18px 10px 0 10px;
+        box-sizing: border-box;
+    }
+
+    .main__subscribe {
+        min-height: 693px;
+    }
+
+    .main__feature {
+        min-height: 610px;
+        padding: 48px 0 0 0;
+        box-sizing: border-box;
+        align-items: unset;
+    }
+
+    .main__feature-cards {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 64px 0;
+        box-sizing: border-box;
+    }
+
+    .main__feature-card:nth-child(-n + 2) {
+        margin-bottom: 48.7px;
+    }
+
+    .main__subscribe .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscribe__info {
+        margin-right: 0;
+        margin-bottom: 48px;
+    }
+
+    .footer__links {
+        margin-right: 0;
+    }
+
+    .footer .container {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 375px) {
+    .header__cart-btn,
+    .header__profile-btn {
+        display: none;
+    }
+
+    .menu:focus ~ .header__profile-btn {
+        display: block;
+    }
+
+    .menu:focus ~ .header__cart-btn {
+        display: block;
+    }
+
+    .header__block-2 {
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+/* Главная страница */
+
+@media (max-width: 1044px) {
+    .main__top-content {
+        min-height: 367px;
+    }
+
+    .main__top-content .container {
+        height: 367px;
+    }
+
+    .main__new-offers {
+        justify-content: center;
+    }
+
+    .offer__text-block-1 {
+        top: 59px;
+        left: 39px;
+    }
+
+    .offer__text-block-2 {
+        top: 57px;
+        left: 61px;
+    }
+
+    .offer__text-block-3 {
+        top: 58px;
+        left: 59px;
+    }
+
+    .offer__text-block-4 {
+        top: 33px;
+        left: 288px;
+    }
+
+    .offer__card:nth-child(-n + 2) {
+        margin-right: 20px;
+    }
+
+    .offer__card img {
+        max-width: 232px;
+    }
+
+    .offer__card {
+        max-width: 232px;
+    }
+
+    .offer__card-4 img {
+        max-width: 735px;
+    }
+
+    .offer__card-4 {
+        max-width: 735px;
+        margin-top: 20px;
+        position: relative;
+    }
+
+    .cards {
+        justify-content: center;
+    }
+
+    .main__card:nth-child(odd) {
+        margin-right: 16px;
+    }
+
+    .main__card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .main__top-content .container {
+        background-image: none;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .main__top-cont {
+        max-width: 236px;
+    }
+
+    .main__top-text {
+        font-size: 38px;
+        line-height: 46px;
+        color: #222222;
+        font-weight: 900;
+    }
+
+    .main__top-text-2,
+    .main__top-text-3 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .offer__card img {
+        max-width: 343px;
+    }
+
+    .offer__card {
+        max-width: 343px;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+
+    .offer__card:nth-child(3) {
+        margin-bottom: 0;
+    }
+
+    .offer__card-4 img {
+        max-width: 343px;
+        height: 111px;
+    }
+
+    .offer__card-4 {
+        max-width: 343px;
+        margin-top: 32px;
+    }
+
+    .main__feature-card:nth-child(-n + 2) {
+        margin: 0;
+    }
+
+    .main__card:nth-child(odd) {
+        margin-right: 0;
+    }
+}
+
+/* Страница Каталог */
+
+@media (max-width: 1034px) {
+    .cards-catalog {
+        justify-content: center;
+    }
+
+    .main__card-9 {
+        display: none;
+    }
+}
+
+/* Страница Продукт */
+
+@media (max-width: 1034px) {
+    .main__product-card {
+        display: none;
+    }
+
+    .main__collection {
+        position: static;
+        width: 99.5%;
+    }
+}
+
+/* Страница Корзина */
+
+@media (max-width: 1034px) {
+    .main__cart .container {
+        max-width: 736px;
+        flex-direction: column;
+    }
+
+    .main__cart-items {
+        max-width: 736px;
+    }
+
+    .main__cart-items-card {
+        max-width: 736px;
+        width: 100%;
+    }
+
+    .main__cart-items-card-info {
+        margin-right: 137px;
+    }
+
+    .main__cart-items-btns {
+        max-width: 508px;
+        width: 100%;
+        margin: 0 auto 64px auto;
+    }
+
+    .main__cart-payment {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .main__cart-payment-proceed {
+        margin-top: 0;
+        min-height: 214px;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 375px) {
+    .main__new-arrivals .container {
+        justify-content: center;
+    }
+
+    .main__cart-items-card {
+        max-width: 358px;
+        height: 188px;
+        width: 100%;
+    }
+
+    .main__cart-items-card img {
+        width: 143px;
+        height: 188px;
+    }
+}
+
+/* Страница Регистрации */
+
+@media (max-width: 1034px) {
+    .main__new-arrivals .container {
+        max-width: 736px;
+    }
+    .main__registration .container {
+        max-width: 736px;
+    }
+
+    .main__registration-loyalty {
+        max-width: 354px;
+    }
+
+    .main__registration-loyalty-title {
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        font-weight: 300;
+    }
+
+    .main__registration-loyalty-subtitle {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+        color: #000000;
+    }
+
+    .main__registration-loyalty-list-item {
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 300;
+        color: #000000;
+        margin-bottom: 16px;
+    }
+
+    .main__registration-loyalty-list-item:last-child {
+        margin-bottom: 0;
+    }
 }
