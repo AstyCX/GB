@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "img": "../img/offer__women.png",
+    "text_1": "30% OFF",
+    "text_2": "FOR WOMEN"
+  },
+  {
+    "id":"2",
+    "img": "../img/offer__man.png",
+    "text_1": "HOT DEAL",
+    "text_2": "FOR MEN"
+  },
+  {
+    "id": "3",
+    "img": "../img/offer__kid.png",
+    "text_1": "NEW ARRIVALS",
+    "text_2": "FOR KIDS"
+  },
+  {
+    "id": "4",
+    "img": "../img/offer__big.png",
+    "text_1": "LUXIROUS & TRENDY",
+    "text_2": "ACCESORIES"
+  }
+]
